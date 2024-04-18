@@ -24,11 +24,12 @@ Semantic Web Technologies Konstantin Schekotihin
 3. Model the following sentences in RDF (Turtle). If possible use URI from schemas available at
     schema.org or GoodRelations whenever possible or use other vocabularies if the previous two
     do not comprise relevant concepts and relations:
-    a. Peter is a person
-    b. Every student is a person
-    c. Jonas and Rosemary are children of Peter, who are 3 and 5
-    d. Mark IV is developed by Canon for professional photographers
-    e. My friend told me that a person who owns a cat is a woman
+    
+    * a. Peter is a person
+    * b. Every student is a person
+    * c. Jonas and Rosemary are children of Peter, who are 3 and 5
+    * d. Mark IV is developed by Canon for professional photographers
+    * e. My friend told me that a person who owns a cat is a woman
 4. What is JSON-LD serialization format for RDF? Convert the document obtained in the previous
     exercise to JSON-LD and use RDF-translator to check your results.
 5. Select an HTML page (e.g. some small article from Wikipedia) and introduce RDF annotations in
