@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:admin="http://webns.net/mvcb/">
+
+
+    <!-- Information about me-->
+      <foaf:Person rdf:about="http://aau.at/marcelew">
+
+      <!-- Name:-->
+      <foaf:name>Marcel Ewinger</foaf:name>
+
+      <!-- Title-->
+      <foaf:title>Mr</foaf:title>
+
+      <!-- Firstname-->
+      <foaf:givenname>Marcel</foaf:givenname>
+
+      <!-- Familyname-->
+      <foaf:family_name>Ewinger</foaf:family_name>
+
+      <!-- Nickname-->
+      <foaf:nick>Ewi</foaf:nick>
+
+      <!-- E-Mail-->
+      <foaf:mbox rdf:resource="marcelew@edu.aau.at"/>
+
+      <!-- Phonenumber-->
+      <foaf:phone rdf:resource="tel:06641945583"/>
+
+      <!-- Gender was not in the form-->
+      <foaf:gender>male</foaf:gender>
+
+      <!-- I know folling persons-->
+      <foaf:knows rdf:resource="http://aau.at/benceba"/>
+      <foaf:knows rdf:resource="http://aau.at/markkofler"/>
+      <foaf:knows rdf:resource="http://aau.at/s2moser"/>
+      <foaf:knows rdf:resource="http://aau.at/mormusel"/>
+      <foaf:knows rdf:resource="http://aau.at/r1delfabro"/>
+    </foaf:Person>
+  
+    <!-- Information about person-->
+    <foaf:Person rdf:about="http://aau.at/benceba">
+      <foaf:name>Bence Balázs</foaf:name>
+      <foaf:mbox rdf:resource="benceba@edu.aau.at"/>
+    </foaf:Person>
+  
+    <foaf:Person rdf:about="http://aau.at/markkofler">
+      <foaf:name>Markus Rupert Kofler</foaf:name>
+      <foaf:mbox rdf:resource="markkofler@edu.aau.at"/>
+    </foaf:Person>
+  
+    <foaf:Person rdf:about="http://aau.at/s2moser">
+      <foaf:name>Sandro Moser</foaf:name>
+      <foaf:mbox rdf:resource="s2moser@edu.aau.at"/>
+    </foaf:Person>
+  
+    <foaf:Person rdf:about="http://aau.at/mormusel">
+      <foaf:name>Musel Moritz</foaf:name>
+      <foaf:mbox rdf:resource="mormusel@edu.aau.at"/>
+    </foaf:Person>
+  
+    <foaf:Person rdf:about="http://aau.at/r1delfabro">
+      <foaf:name>Raphael del Fabro</foaf:name>
+      <foaf:mbox rdf:resource="r1delfabro@edu.aau.at"/>
+    </foaf:Person>
+  
+  </rdf:RDF>

@@ -1,0 +1,49 @@
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sec:<http://www.syssec.at/> .
+
+#Information about Me
+<http://aau.at/marcelew>#URI (Subject)
+  a foaf:Person ;
+  foaf:name "Marcel Ewinger" ;
+  foaf:title "Mr" ;
+  foaf:givenname "Marcel" ;
+  foaf:family_name "Ewinger" ;
+  foaf:nick "Ewi" ;
+  foaf:mbox <http://aau.at/marcelew@edu.aau.at> ;
+  foaf:phone <tel:06641945583> ;
+  foaf:gender "male" ;
+
+  #know --> predicate
+  foaf:knows <http://aau.at/benceba>, <http://aau.at/markkofler>, <http://aau.at/s2moser>, <http://aau.at/mormusel>, <http://aau.at/r1delfabro> .
+
+  #object
+<http://aau.at/benceba>
+  a foaf:Person ;
+  foaf:name "Bence Balázs" ;
+  foaf:mbox <http://aau.at/benceba@edu.aau.at> .
+
+   #object
+<http://aau.at/markkofler>
+  a foaf:Person ;
+  foaf:name "Markus Rupert Kofler" ;
+  foaf:mbox <http://aau.at/markkofler@edu.aau.at> .
+
+   #object
+<http://aau.at/s2moser>
+  a foaf:Person ;
+  foaf:name "Sandro Moser" ;
+  foaf:mbox <http://aau.at/s2moser@edu.aau.at> .
+
+   #object
+<http://aau.at/mormusel>
+  a foaf:Person ;
+  foaf:name "Musel Moritz" ;
+  foaf:mbox <http://aau.at/mormusel@edu.aau.at> .
+
+   #object
+<http://aau.at/r1delfabro>
+  a foaf:Person ;
+  foaf:name "Raphael del Fabro" ;
+  foaf:mbox <http://aau.at/r1delfabro@edu.aau.at> .
