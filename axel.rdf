@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+     <!ENTITY owl  "http://www.w3.org/2002/07/owl#" >
+     <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+     <!ENTITY foaf  "http://xmlns.com/foaf/0.1/" >
+     <!ENTITY ical  "http://www.w3.org/2002/12/cal/ical#" >
+   ]>
+
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xml:base="http://www.polleres.net/foaf.rdf">
+
+  <foaf:PersonalProfileDocument rdf:about="">
+    <foaf:maker rdf:resource="#me"/>
+    <foaf:primaryTopic rdf:resource="#me"/>
+    <owl:sameAs rdf:resource="http://polleres.net/foaf.rdf"/>
+    <owl:sameAs rdf:resource="http://www.polleres.net/foaf.rdf"/>
+  </foaf:PersonalProfileDocument>
+
+
+  <foaf:Person rdf:ID="me">
+    <owl:sameAs rdf:resource="http://www.w3.org/2005/rules/wg/data#apollere2"/>
+    <rdfs:seeAlso rdf:resource="http://www.google.com/profiles/droxel"/>
+    <foaf:page rdf:resource="http://dblp.l3s.de/d2r/page/authors/Axel_Polleres"/>
+  
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Logic_programming"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Semantic_Web"/>
+    <foaf:name>Axel Polleres</foaf:name>
+    <foaf:title>Dr</foaf:title>
+    <foaf:givenname>Axel</foaf:givenname>
+    <foaf:surname>Polleres</foaf:surname>
+    <foaf:firstName>Axel</foaf:firstName>
+    <foaf:family_name>Polleres</foaf:family_name>
+    <foaf:familyName>Polleres</foaf:familyName>
+    <foaf:lastName>Polleres</foaf:lastName>
+    <foaf:schoolHomepage rdf:resource="http://www.tuwien.ac.at/"/>
+
+    
+    <foaf:knows>		
+      <foaf:Person rdf:about="http://harth.org/andreas/foaf#ah">
+        <rdfs:seeAlso rdf:resource="http://www.harth.org/andreas/foaf.rdf"/>
+        <foaf:name>Andreas Harth</foaf:name>
+        <foaf:homepage rdf:resource="http://www.harth.org/andreas/"/>
+      </foaf:Person>
+    </foaf:knows>
+   
+    <foaf:knows>
+      <foaf:Person rdf:about="http://www.wikier.org/foaf#wikier">
+        <rdfs:seeAlso rdf:resource="http://www.wikier.org/foaf.rdf"/>
+        <foaf:name>Sergio Fernández</foaf:name>
+        <foaf:homepage rdf:resource="http://www.wikier.org/"/>
+      </foaf:Person>
+    </foaf:knows>
+ 
+ </foaf:Person>
+ 
+</rdf:RDF>
+
+
