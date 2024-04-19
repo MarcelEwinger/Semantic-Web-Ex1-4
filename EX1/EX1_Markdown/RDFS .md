@@ -24,23 +24,30 @@ Semantic Web Technologies Konstantin Schekotihin
 3. Model the following sentences in RDF (Turtle). If possible use URI from schemas available at
     schema.org or GoodRelations whenever possible or use other vocabularies if the previous two
     do not comprise relevant concepts and relations:
-    
+
     * a. Peter is a person
     * b. Every student is a person
     * c. Jonas and Rosemary are children of Peter, who are 3 and 5
     * d. Mark IV is developed by Canon for professional photographers
     * e. My friend told me that a person who owns a cat is a woman
+  
+  <br>
 4. What is JSON-LD serialization format for RDF? Convert the document obtained in the previous
     exercise to JSON-LD and use RDF-translator to check your results.
+    <br>
+
 5. Select an HTML page (e.g. some small article from Wikipedia) and introduce RDF annotations in
     RDFa or JSON-LD formats to it. You can use Google Structured Data Testing Tool (see
     Documentation for more details).
+    <br>
 6. Use Jena^5 command line tools (riot.bat) to convert the student.rdf into Turtle syntax. Explain
     the meaning of the meaning of the triples. See [http://jena.apache.org/documentation/io/](http://jena.apache.org/documentation/io/) for
     help.
+    <br>
 7. Use Jena RDFS inference engine to obtain RDFS entailments (infer.bat) of student.rdf and
     save only inferred axioms in the Turtle format. Explain why these triples are derived using
     common sense reasoning.
+    <br>
 8. Similarly as in (7) apply inference to axel.rdf using FOAF as RDFS vocabulary.
 
 (^1) [http://www.ldodds.com/foaf/foaf-a-matic.html](http://www.ldodds.com/foaf/foaf-a-matic.html)
@@ -51,8 +58,6 @@ Semantic Web Technologies Konstantin Schekotihin
 (^5) Download Jena from [http://jena.apache.org](http://jena.apache.org) (works with Java 6 of higher) and register the JENA_ROOT=Jena/Path
 environmental variable
 
-
-Semantic Web Technologies Konstantin Schekotihin
 
 ```
 Example (Windows PC connected to the Internet):

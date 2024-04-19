@@ -1,0 +1,50 @@
+# Prefix declarations
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
+
+
+
+#a Peter is a person
+schema:Peter rdf:type schema:Person .  
+# Declares that 'Peter' is of type 'Person' in the Schema.org vocabulary
+
+#b. Every student is a person
+schema:Student rdf:type schema:Person .  
+# Declares that 'Student' is of type 'Person' in the Schema.org vocabulary
+
+#c. Jonas and Rosemary are children of Peter, who are 3 and 5
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+#The abbreviation "xsd" refers to the XML Schema Definition language, which provides a way to 
+#define the structure and data types for XML documents.
+
+# Description for the entity "Jobas":
+schema:Jobas rdf:type schema:Person ;   # Jobas is defined as an instance of the class "Person".
+    schema:parent schema:Peter ;        # Jobas has Peter as a parent.
+    schema:age "3"^^xsd:nonNegativeInteger .       # Jobas's age is set to 3 years.
+
+# Description for the entity "Rosemary":
+schema:Rosemary rdf:type schema:Person ;   # Rosemary is defined as an instance of the class "Person".
+    schema:parent schema:Peter ;          # Rosemary has Peter as a parent.
+    schema:age "5"^^xsd:nonNegativeInteger . # Rosemary's age is set to 5 years.
+
+
+#d. Mark IV is developed by Canon for professional photographers
+# Define the prefix for the DBpedia namespace
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+
+# Declare the resource for the Canon EOS 5D Mark IV from DBpedia
+dbpedia:Canon_EOS_5D_Mark_IV rdf:type dbpedia:Camera ;  
+     # The Canon EOS 5D Mark IV resource is specified as an instance of the Camera class.
+
+    schema:manufacturer dbpedia:Canon_Inc ;   # Indicates that the manufacturer of the Canon EOS 5D Mark IV is Canon, using a DBpedia resource.
+    schema:audience schema:ProfessionalPhotographers .   # Specifies that the intended audience for the Canon EOS 5D Mark IV is professional photographers.
+
+
+
+#e. My friend told me that a person who owns a cat is a woman
+
+
+
