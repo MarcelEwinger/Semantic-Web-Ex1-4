@@ -34,7 +34,10 @@ Semantic Web Technologies Konstantin Schekotihin
   <br>
 4. What is JSON-LD serialization format for RDF? Convert the document obtained in the previous
     exercise to JSON-LD and use RDF-translator to check your results.
-    <br>
+
+    
+    JSON-LD (JSON Linked Data) is a serialization format for expressing Linked Data in JSON. It's designed to be both human-readable and machine-understandable. JSON-LD is particularly useful for representing RDF (Resource Description Framework) data in JSON format
+    
 
 5. Select an HTML page (e.g. some small article from Wikipedia) and introduce RDF annotations in
     RDFa or JSON-LD formats to it. You can use Google Structured Data Testing Tool (see
