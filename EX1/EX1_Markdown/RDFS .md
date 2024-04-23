@@ -32,7 +32,7 @@ Semantic Web Technologies Konstantin Schekotihin
     * e. My friend told me that a person who owns a cat is a woman
   
   <br>
-  
+
 4. What is JSON-LD serialization format for RDF? Convert the document obtained in the previous
     exercise to JSON-LD and use RDF-translator to check your results.
 
@@ -43,6 +43,22 @@ Semantic Web Technologies Konstantin Schekotihin
 5. Select an HTML page (e.g. some small article from Wikipedia) and introduce RDF annotations in
     RDFa or JSON-LD formats to it. You can use Google Structured Data Testing Tool (see
     Documentation for more details).
+
+   *  This JSON-LD code describes a list of items (itemListElement), each formatted as individual list items (ListItem). The list is defined as an ItemList.
+
+   * @context: Specifies the context for interpreting the data. Here, the Schema.org context is used, indicating that the data should be interpreted according to Schema.org specifications.
+     * @type: Specifies the type of the main object. Here, it's ItemList, indicating that it's a list of items.
+    itemListElement: This is the main field containing the list of elements.
+    Each element in the list has:
+      * @type: The type of the element. Here, it's ListItem, indicating that it's a list item.
+      * position: The position of the element in the list.
+      * name: The name of the element. Here, the names are carrot, broccoli, and tomato, representing the vegetable names.
+      * url: The URL representing the element. Here, the URLs point to the respective pages on DBpedia containing information about each vegetable.
+ * In summary, this JSON-LD code describes a list of vegetables with their names, positions in the list, and corresponding URLs.
+
+    https://validator.schema.org/
+
+
     <br>
 6. Use Jena^5 command line tools (riot.bat) to convert the student.rdf into Turtle syntax. Explain
     the meaning of the meaning of the triples. See [http://jena.apache.org/documentation/io/](http://jena.apache.org/documentation/io/) for
@@ -57,8 +73,11 @@ Semantic Web Technologies Konstantin Schekotihin
 (^1) [http://www.ldodds.com/foaf/foaf-a-matic.html](http://www.ldodds.com/foaf/foaf-a-matic.html)
 
 (^2) [http://xmlns.com/foaf/0.1/](http://xmlns.com/foaf/0.1/)
+
 (^3) https://protege.stanford.edu/software.php
+
 (^4) [http://www.w3.org/RDF/Validator/](http://www.w3.org/RDF/Validator/) do not forget to make an appropriate selection in “Triples and/or Graph”
+
 (^5) Download Jena from [http://jena.apache.org](http://jena.apache.org) (works with Java 6 of higher) and register the JENA_ROOT=Jena/Path
 environmental variable
 

@@ -1,0 +1,93 @@
+{
+    "@context": {
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "schema": "http://schema.org/",
+      "dbo": "http://dbpedia.org/ontology/",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "person": "http://localhost:8080/data/person/"
+    },
+    "@graph": [
+      {
+        "@id": "http://dbpedia.org/page/Canon_EOS_5D_Mark_IV",
+        "@type": "http://dbpedia.org/page/Camera",
+        "schema:audience": {
+          "@id": "http://example.org/professionalPhotographer"
+        },
+        "schema:manufacturer": {
+          "@id": "http://dbpedia.org/page/Canon_Inc"
+        }
+      },
+      {
+        "@id": "http://example.org/Friend",
+        "http://example.org/told": {
+          "@id": "http://example.org/StatementFriend"
+        }
+      },
+      {
+        "@id": "http://example.org/Jonas",
+        "@type": "schema:Person",
+        "schema:age": {
+          "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+          "@value": "3"
+        },
+        "schema:parent": {
+          "@id": "schema:Peter"
+        }
+      },
+      {
+        "@id": "http://example.org/Peter",
+        "@type": "schema:Person",
+        "foaf:name": "Peter"
+      },
+      {
+        "@id": "http://example.org/Rosemary",
+        "@type": "schema:Person",
+        "schema:age": {
+          "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+          "@value": "5"
+        },
+        "schema:parent": {
+          "@id": "schema:Peter"
+        }
+      },
+      {
+        "@id": "http://example.org/StatementFriend",
+        "@type": "rdf:Statement",
+        "rdf:object": {
+          "@id": "http://example.org/Woman"
+        },
+        "rdf:predicate": {
+          "@id": "rdf:type"
+        },
+        "rdf:subject": {
+          "@id": "http://example.org/ownsCat"
+        },
+        "http://www.w3.org/2000/01/rdf-schema#comment": "According to my friend's statement, if a person owns a cat, they are considered a woman",
+        "http://www.w3.org/2000/01/rdf-schema#label": "Owning a cat implies being a woman"
+      },
+      {
+        "@id": "http://example.org/Student",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+          "@id": "schema:Person"
+        }
+      },
+      {
+        "@id": "http://example.org/Woman",
+        "@type": "http://www.w3.org/2000/01/rdf-schema#Class",
+        "http://www.w3.org/2000/01/rdf-schema#comment": "Class representing women",
+        "http://www.w3.org/2000/01/rdf-schema#label": "Woman"
+      },
+      {
+        "@id": "http://example.org/ownsCat",
+        "@type": "rdf:Property",
+        "http://www.w3.org/2000/01/rdf-schema#comment": "Relates a person to the ownership of a cat",
+        "http://www.w3.org/2000/01/rdf-schema#label": "ownsCat"
+      },
+      {
+        "@id": "http://example.org/professionalPhotographer",
+        "@type": "schema:audience",
+        "schema:audienceType": "professional Photographers"
+      }
+    ]
+  }
+  
