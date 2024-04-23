@@ -50,15 +50,20 @@ dbpedia:Canon_EOS_5D_Mark_IV a dbpedia:Camera ;
 
 
 #e. My friend told me that a person who owns a cat is a woman
+
+
+ex:Friend ex:told ex:StatementFriend .
+
 ex:ownsCat a rdf:Property ;
     rdfs:label "ownsCat" ;
     rdfs:comment "Relates a person to the ownership of a cat" .
 
-ex:Woman a rdf:Class ;
-    rdfs:label "Woman" ;
-    rdfs:comment "Represents the class of women" .
 
-ex:ownsCatImpliesWoman a rdf:Statement ;
+ex:Women rdf:type rdfs:Class ;
+    rdfs:label "Woman" ;
+    rdfs:comment "Class women" .
+
+ex:StatementFriend a rdf:Statement;
     rdf:subject ex:ownsCat ;
     rdf:predicate rdf:type ;
     rdf:object ex:Woman ;
