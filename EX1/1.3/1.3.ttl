@@ -1,18 +1,24 @@
 # Prefix declarations
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+
+#often used in examples to represent fictitious or demonstrative entities
+@prefix ex: <http://example.org/> .
+
+# often used to describe structured data on the web
 @prefix schema: <http://schema.org/> .
+
 @prefix foaf:<http://xmlns.com/foaf/0.1/> .
 
 
-
 #a Peter is a person
-schema:Peter rdf:type schema:Person .  
-# Declares that 'Peter' is of type 'Person' in the Schema.org vocabulary
+ex:Peter a schema:Person ;
+    foaf:name "Peter".
+
 
 #b. Every student is a person
-schema:Student rdf:type schema:Person .  
-# Declares that 'Student' is of type 'Person' in the Schema.org vocabulary
+ex:Student rdfs:subClassOf schema:Person . 
+
 
 #c. Jonas and Rosemary are children of Peter, who are 3 and 5
 
@@ -21,30 +27,42 @@ schema:Student rdf:type schema:Person .
 #define the structure and data types for XML documents.
 
 # Description for the entity "Jobas":
-schema:Jobas rdf:type schema:Person ;   # Jobas is defined as an instance of the class "Person".
-    schema:parent schema:Peter ;        # Jobas has Peter as a parent.
+ex:Jonas a schema:Person ;
+    schema:parent schema:Peter ;
     schema:age "3"^^xsd:nonNegativeInteger .       # Jobas's age is set to 3 years.
 
-# Description for the entity "Rosemary":
-schema:Rosemary rdf:type schema:Person ;   # Rosemary is defined as an instance of the class "Person".
-    schema:parent schema:Peter ;          # Rosemary has Peter as a parent.
+ex:Rosemary a schema:Person ;
+    schema:parent schema:Peter ;
     schema:age "5"^^xsd:nonNegativeInteger . # Rosemary's age is set to 5 years.
 
 
 #d. Mark IV is developed by Canon for professional photographers
 # Define the prefix for the DBpedia namespace
-@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbpedia: <http://dbpedia.org/page/> .
 
-# Declare the resource for the Canon EOS 5D Mark IV from DBpedia
-dbpedia:Canon_EOS_5D_Mark_IV rdf:type dbpedia:Camera ;  
-     # The Canon EOS 5D Mark IV resource is specified as an instance of the Camera class.
+ex:professionalPhotographer a schema:audience ;
+    schema:audienceType "professional Photographers" .
 
-    schema:manufacturer dbpedia:Canon_Inc ;   # Indicates that the manufacturer of the Canon EOS 5D Mark IV is Canon, using a DBpedia resource.
-    schema:audience schema:ProfessionalPhotographers .   # Specifies that the intended audience for the Canon EOS 5D Mark IV is professional photographers.
+dbpedia:Canon_EOS_5D_Mark_IV a dbpedia:Camera ;
+    schema:manufacturer dbpedia:Canon_Inc ;
+    schema:audience ex:professionalPhotographer .
 
 
 
 #e. My friend told me that a person who owns a cat is a woman
+ex:ownsCat a rdf:Property ;
+    rdfs:label "ownsCat" ;
+    rdfs:comment "Relates a person to the ownership of a cat" .
 
+ex:Woman a rdf:Class ;
+    rdfs:label "Woman" ;
+    rdfs:comment "Represents the class of women" .
+
+ex:ownsCatImpliesWoman a rdf:Statement ;
+    rdf:subject ex:ownsCat ;
+    rdf:predicate rdf:type ;
+    rdf:object ex:Woman ;
+    rdfs:label "Owning a cat implies being a woman" ;
+    rdfs:comment "Asserts that if a person owns a cat, that person is a woman" .
 
 

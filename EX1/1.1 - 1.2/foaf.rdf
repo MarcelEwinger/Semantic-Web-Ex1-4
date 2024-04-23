@@ -33,38 +33,44 @@
       <!-- Gender was not in the form-->
       <foaf:gender>male</foaf:gender>
 
-      <!-- I know folling persons-->
-      <foaf:knows rdf:resource="http://aau.at/benceba"/>
-      <foaf:knows rdf:resource="http://aau.at/markkofler"/>
-      <foaf:knows rdf:resource="http://aau.at/s2moser"/>
-      <foaf:knows rdf:resource="http://aau.at/mormusel"/>
-      <foaf:knows rdf:resource="http://aau.at/r1delfabro"/>
-    </foaf:Person>
-  
+    
     <!-- Information about person-->
-    <foaf:Person rdf:about="http://aau.at/benceba">
-      <foaf:name>Bence Balázs</foaf:name>
-      <foaf:mbox rdf:resource="benceba@edu.aau.at"/>
-    </foaf:Person>
+    <foaf:knows>
+      <foaf:Person rdf:about="http://aau.at/benceba">
+        <foaf:name>Bence Balázs</foaf:name>
+        <foaf:mbox rdf:resource="benceba@edu.aau.at"/>
+      </foaf:Person>
+    </foaf:knows>
   
-    <foaf:Person rdf:about="http://aau.at/markkofler">
-      <foaf:name>Markus Rupert Kofler</foaf:name>
-      <foaf:mbox rdf:resource="markkofler@edu.aau.at"/>
-    </foaf:Person>
+    <foaf:knows>
+      <foaf:Person rdf:about="http://aau.at/markkofler">
+        <foaf:name>Markus Rupert Kofler</foaf:name>
+        <foaf:mbox rdf:resource="markkofler@edu.aau.at"/>
+      </foaf:Person>
+    </foaf:knows>
   
+
+  <foaf:knows>
     <foaf:Person rdf:about="http://aau.at/s2moser">
       <foaf:name>Sandro Moser</foaf:name>
       <foaf:mbox rdf:resource="s2moser@edu.aau.at"/>
     </foaf:Person>
+  </foaf:knows>
   
+  <foaf:knows>
     <foaf:Person rdf:about="http://aau.at/mormusel">
       <foaf:name>Musel Moritz</foaf:name>
       <foaf:mbox rdf:resource="mormusel@edu.aau.at"/>
     </foaf:Person>
+  </foaf:knows>
   
+  <foaf:knows>
     <foaf:Person rdf:about="http://aau.at/r1delfabro">
       <foaf:name>Raphael del Fabro</foaf:name>
       <foaf:mbox rdf:resource="r1delfabro@edu.aau.at"/>
     </foaf:Person>
+  </foaf:knows>
+
+</foaf:Person>
   
-  </rdf:RDF>
+</rdf:RDF>
