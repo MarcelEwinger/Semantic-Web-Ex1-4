@@ -1,0 +1,30 @@
+#namespaces
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX uni: <http://aau.at/#>
+
+# This triple states that the property uni:studiesAt is a subproperty 
+#of uni:visits. In other words, studying at a university is a specific 
+#type of visiting that university.
+uni:studiesAt  rdfs:subPropertyOf  uni:visits .
+
+## The student studies at the AAU
+uni:Student  uni:studiesAt  uni:AAU .
+
+# Megan studies at the AAU
+uni:Megan  uni:studiesAt  uni:AAU .
+
+# resources denoted by the studiesAt property are Students
+uni:studiesAt  rdfs:domain  uni:Student ;
+ # the studiesAt property can only have the values of type University       
+        rdfs:range   uni:University .
+
+
+#indicating that all students are persons.
+uni:Student  rdfs:subClassOf  uni:Person .
+
+#indicating that all persons are agents.
+uni:Person  rdfs:subClassOf  uni:Agent .
+
+#This triple asserts that the class uni:Agent is a subclass of uni:Thing, implying that all agents are things.
+uni:Agent  rdfs:subClassOf  uni:Thing .

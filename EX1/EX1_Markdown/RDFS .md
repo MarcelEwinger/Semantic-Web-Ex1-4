@@ -38,6 +38,7 @@ Semantic Web Technologies Konstantin Schekotihin
 
     
     JSON-LD (JSON for Linked Data) is a serialization format for RDF (Resource Description Framework) data, designed to be easy to read and write for humans and easy to parse and generate for machines. It allows RDF data to be represented in JSON format while maintaining compatibility with RDF semantics.
+    https://www.easyrdf.org/converter
     
 
 5. Select an HTML page (e.g. some small article from Wikipedia) and introduce RDF annotations in
@@ -58,11 +59,18 @@ Semantic Web Technologies Konstantin Schekotihin
 
     https://validator.schema.org/
 
-
-    <br>
+    
 6. Use Jena^5 command line tools (riot.bat) to convert the student.rdf into Turtle syntax. Explain
     the meaning of the meaning of the triples. See [http://jena.apache.org/documentation/io/](http://jena.apache.org/documentation/io/) for
     help.
+
+    * Download Apache Jana and save it
+    * Add environmental variable
+    * Open CMD
+    * Navigate where student.rdf is saved
+    * Execute comment riot --output=ttl student.rdf >> student.ttl
+    * Finished
+  
     <br>
 7. Use Jena RDFS inference engine to obtain RDFS entailments (infer.bat) of student.rdf and
     save only inferred axioms in the Turtle format. Explain why these triples are derived using
@@ -89,6 +97,7 @@ infer.bat --rdfs=http://xmlns.com/foaf/0.1/index.rdf axel.rdf
 Save all inferred triples in the Turtle format. Select five saved triples and explain them using
 FOAF vocabulary definitions http://xmlns.com/foaf/spec/
 ```
+
 9. Create an RDFS ontology describing the following part of a domain that describes pets.
     - All dogs are animals.
     - Parent is a relationship defined for animals.
@@ -103,6 +112,9 @@ document (see Section 9 of RDFS 1.1 Recommendation^6 ), to obtain as much entail
 10. ex:Mike a foaf:Person.
     ex:Mike ex:friend ex:Jerry.
     ex:friend rdfs:subPropertyOf foaf:knows.
+
+    <br>
+    
 11. ex:Megan ex:hasParent ex:Mike.
     ex:hasParent rdfs:domain ex:Person.
     ex:Person rdfs:subClassOf ex:Agent.
