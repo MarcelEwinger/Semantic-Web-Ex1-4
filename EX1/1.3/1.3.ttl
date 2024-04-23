@@ -40,34 +40,37 @@ ex:Rosemary a schema:Person ;
 # Define the prefix for the DBpedia namespace
 @prefix dbpedia: <http://dbpedia.org/page/> .
 
+# Define an audience category named "professionalPhotographer"
 ex:professionalPhotographer a schema:audience ;
     schema:audienceType "professional Photographers" .
 
+# Define a camera model, Canon EOS 5D Mark IV
 dbpedia:Canon_EOS_5D_Mark_IV a dbpedia:Camera ;
-    schema:manufacturer dbpedia:Canon_Inc ;
-    schema:audience ex:professionalPhotographer .
+    schema:manufacturer dbpedia:Canon_Inc ;  # Specify the manufacturer as Canon Inc
+    schema:audience ex:professionalPhotographer .  # Associate the camera with the professionalPhotographer audience
+
 
 
 
 #e. My friend told me that a person who owns a cat is a woman
 
+# Statement: My friend told me
+ex:Friend ex:told ex:StatementFriend . 
 
-ex:Friend ex:told ex:StatementFriend .
+# Property relating a person to the ownership of a cat
+ex:ownsCat a rdf:Property ;  # 'ex:ownsCat' is an RDF property
+    rdfs:label "ownsCat" ;  
+    rdfs:comment "Relates a person to the ownership of a cat" . 
 
-ex:ownsCat a rdf:Property ;
-    rdfs:label "ownsCat" ;
-    rdfs:comment "Relates a person to the ownership of a cat" .
+# Class representing women
+ex:Woman rdf:type rdfs:Class ;  # 'ex:Woman' is an RDF class
+    rdfs:label "Woman" ;  
+    rdfs:comment "Class representing women" .
 
-
-ex:Women rdf:type rdfs:Class ;
-    rdfs:label "Woman" ;
-    rdfs:comment "Class women" .
-
-ex:StatementFriend a rdf:Statement;
-    rdf:subject ex:ownsCat ;
-    rdf:predicate rdf:type ;
-    rdf:object ex:Woman ;
-    rdfs:label "Owning a cat implies being a woman" ;
-    rdfs:comment "Asserts that if a person owns a cat, that person is a woman" .
-
-
+# Statement about the implication that owning a cat means being a woman
+ex:StatementFriend a rdf:Statement ;  
+    rdf:subject ex:ownsCat ;  
+    rdf:predicate rdf:type ; 
+    rdf:object ex:Woman ; 
+    rdfs:label "Owning a cat implies being a woman" ;  # Label for the statement
+    rdfs:comment "According to my friend's statement, if a person owns a cat, they are considered a woman" .  
