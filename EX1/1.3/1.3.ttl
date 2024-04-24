@@ -30,7 +30,6 @@ ex:Student rdfs:subClassOf schema:Person .
 ex:Jonas a schema:Person ;
     schema:parent schema:Peter ;
     schema:age "3"^^xsd:nonNegativeInteger .       # Jobas's age is set to 3 years.
-
 ex:Rosemary a schema:Person ;
     schema:parent schema:Peter ;
     schema:age "5"^^xsd:nonNegativeInteger . # Rosemary's age is set to 5 years.
@@ -74,3 +73,13 @@ ex:StatementFriend a rdf:Statement ;
     rdf:object ex:Woman ; 
     rdfs:label "Owning a cat implies being a woman" ;  # Label for the statement
     rdfs:comment "According to my friend's statement, if a person owns a cat, they are considered a woman" .  
+
+
+
+
+#the right way
+ex:Friend ex: says [
+    rdf:subject ex:Woman;
+    rdf:predicate ex:owns;
+    rdf:object ex:Cat
+]
