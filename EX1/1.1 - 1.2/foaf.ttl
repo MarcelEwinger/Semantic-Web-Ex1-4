@@ -19,31 +19,31 @@
   foaf:knows <http://aau.at/benceba>, <http://aau.at/markkofler>, <http://aau.at/s2moser>, <http://aau.at/mormusel>, <http://aau.at/r1delfabro> .
 
   #object
-<http://aau.at/benceba>
+<http://aau.at/benceba>#URI
   a foaf:Person ;
   foaf:name "Bence Balázs" ;
   foaf:mbox <http://aau.at/benceba@edu.aau.at> .
 
    #object
-<http://aau.at/markkofler>
+<http://aau.at/markkofler>#URI
   a foaf:Person ;
   foaf:name "Markus Rupert Kofler" ;
   foaf:mbox <http://aau.at/markkofler@edu.aau.at> .
 
    #object
-<http://aau.at/s2moser>
+<http://aau.at/s2moser>#URI
   a foaf:Person ;
   foaf:name "Sandro Moser" ;
   foaf:mbox <http://aau.at/s2moser@edu.aau.at> .
 
    #object
-<http://aau.at/mormusel>
+<http://aau.at/mormusel>#URI
   a foaf:Person ;
   foaf:name "Musel Moritz" ;
   foaf:mbox <http://aau.at/mormusel@edu.aau.at> .
 
    #object
-<http://aau.at/r1delfabro>
+<http://aau.at/r1delfabro>#URI
   a foaf:Person ;
   foaf:name "Raphael del Fabro" ;
   foaf:mbox <http://aau.at/r1delfabro@edu.aau.at> .
