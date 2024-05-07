@@ -75,6 +75,10 @@ Semantic Web Technologies Konstantin Schekotihin
 7. Use Jena RDFS inference engine to obtain RDFS entailments (infer.bat) of student.rdf and
     save only inferred axioms in the Turtle format. Explain why these triples are derived using
     common sense reasoning.
+    * Open CMD
+    * Navigate where student.rdf is saved
+    * Execute comment infer.bat --rdfs=http://xmlns.com/foaf/0.1/index.rdf student.rdf
+   * Finished
     <br>
 8. Similarly as in (7) apply inference to axel.rdf using FOAF as RDFS vocabulary.
 

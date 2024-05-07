@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+
+#All dogs are animals.
+    # Define classes
+ex:Animal rdf:type rdfs:Class ;
+    rdfs:label "Animal" ;
+    rdfs:comment "Class representing animal".
+
+ex:Dog rdf:type rdfs:Class ;
+    rdfs:label "Dog" ;
+    rdfs:subClassOf ex:Animal .
+
+
+
+#Parent is a relationship defined for animals.
+ex:relativeOf rdf:type rdf:Property ;
+    rdfs:label "relative of" ;
+    rdfs:domain ex:Animal ;
+    rdfs:range ex:Animal ;
+    rdfs:comment "Indicates kinship between animals." .
+
+
+
+#All animals related as parents are also relatives.
+ex:parentOf rdf:type rdf:Property ;
+    rdfs:label "parent of" ;
+    rdfs:domain ex:Animal ;
+    rdfs:range ex:Animal ;
+    rdfs:subPropertyOf ex:relativeOf ;
+    rdfs:comment "Defines a parent-child relationship between animals." .
+
+#Jake states that dogs are carnivores.
+    # Define classes
+ex:Carnivore rdf:type rdfs:Class ;
+    rdfs:label "Carnivore" ;
+    rdfs:comment "An animal that eats primarily meat." .
+
+    # Relationship between dogs and carnivores
+ex:Dog rdfs:subClassOf ex:Carnivore .
+
+ex:Jake ex:states [ rdf:type ex:Dog ;
+                    ex:isA ex:Carnivore ] .
+
+#Wikipedia has also a definition of a dog
+ex:Wikipedia rdf:type ex:OnlineResource ;
+    ex:defines ex:Dog ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Dog> .
+
