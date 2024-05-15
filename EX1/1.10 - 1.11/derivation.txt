@@ -1,0 +1,27 @@
+10.
+ex:Mike a foaf:Person .
+ex:Mike ex:friend ex:Jerry .
+ex:friend rdfs:subPropertyOf foaf:knows .
+
+1) friend sp friend  
+2) k sp k 
+3) Mike k Jerry
+
+
+11. 
+ex:Megan ex:hasParent ex:Mike . 
+ex:hasParent rdfs:domain ex:Person . 
+ex:Person rdfs:subClassOf ex:Agent .
+
+#Check Reflexity
+1) hasParent sp hasParent         hasParent (A) & p(B)
+2) Person sc Person               hasparent (C) sp (hp) 
+3) Agent  sc Agent                Megan (X) hasParent Mike (Y)
+3) Megan a Person                 Person (A) sc Agent (B)
+4) Megan a Agent                  Megan      c Person
+
+Use 3 different Rules for 3 Derivation --> EXAM
+        
+
+
+
