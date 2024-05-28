@@ -1,0 +1,62 @@
+[
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#2.2 Find all metallic liquid elements \r\nPREFIX pt: <http://www.daml.org/2003/01/periodictable/PeriodicTable.owl#>\r\n\r\nSELECT *\r\nWHERE {\r\n ?element pt:classification pt:Metallic .\r\n ?element pt:standardState pt:liquid .\r\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# 2.3 Find all elements which atomic number lies between 85 and 105. Limit the dataset to the 10 \r\n#records starting from the 3rd record. Order the results by name of elements. \r\n\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# 2.4 Extend the previous query to find whether some not actinides in among \r\n#the elements.  ",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# 2.5 Find all elements which name starts with the letter “C”.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# 2.6 Use the periodic table ontology to determine the number of elements in actinoid and lanthanoid groups. ",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#2.7 Compute the number of neutrons for each element Neutrons=AtomicWeight – AtomicNumber. \r\n#The latter corresponds to the number of protons. ",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#2.8 Find a non-metallic element with the maximum atomic number.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#2.9 Find all metallic elements which atomic number is greater than the average. ",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#2.10 Select all group’s numbers, which do not have names. Try both variants of negation. ",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#2.11  Get more information about elements from dbpedia. Use the fact that every element has a name \r\n#in the ontology and in rdfs:label in dbpedia resource description.  \r\n#See for instance “Helium”  http://dbpedia.org/page/Helium",
+    "metadata": {}
+  }
+]
