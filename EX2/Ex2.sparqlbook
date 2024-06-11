@@ -2,7 +2,7 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "#2.2 Find all metallic liquid elements \r\nPREFIX pt: <http://www.daml.org/2003/01/periodictable/PeriodicTable.owl#>\r\n\r\nSELECT *\r\nWHERE {\r\n ?element pt:classification pt:Metallic .\r\n ?element pt:standardState pt:liquid .\r\n}",
+    "value": "#2.2 Find all metallic liquid elements \r\n# [endpoint=http://www.daml.org/2003/01/periodictable/PeriodicTable.owl]\r\n\r\nPREFIX pt: <http://www.daml.org/2003/01/periodictable/PeriodicTable#>\r\n\r\nSELECT * \r\nFROM <http://www.daml.org/2003/01/periodictable/PeriodicTable.owl>\r\nWHERE {\r\n ?element pt:classification pt:Metallic .\r\n ?element pt:standardState pt:liquid .\r\n}",
     "metadata": {}
   },
   {
