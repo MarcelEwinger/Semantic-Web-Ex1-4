@@ -19,10 +19,58 @@ dbpedia:𝐴𝑙𝑖𝑒𝑛 rdf:type rdfs:Class .
 dbpedia:Human owl:disjointWith dbpedia:Alien .
 
 
+
 #𝐹𝑎𝑡ℎ𝑒𝑟𝑊𝑖𝑡ℎ𝐷𝑎𝑢𝑔ℎ𝑡𝑒𝑟𝑠 ⊑ 𝑀𝑎𝑛 ⊓ ∀ℎ𝑎𝑠𝐶ℎ𝑖𝑙𝑑.𝑊𝑜𝑚𝑎𝑛 
-ex:Man rdf:type rdfs:Class .
-ex:Woman rdf:type rdfs:Class .
-ex:FatherWithDaughters rdf:type rdfs:Class .
+    # Define the class Man as a subclass of Human from DBpedia
+dbpedia:Man rdf:type rdfs:Class ;
+    rdfs:subClassOf dbpedia:Human .
+
+    # Define the class Woman as a subclass of Human from DBpedia
+dbpedia:Woman rdf:type rdfs:Class ;
+    rdfs:subClassOf dbpedia:Human .
+
+    # Define the property hasChild as an ObjectProperty
+ex:hasChild rdf:type owl:ObjectProperty .
+
+    # Define the class FatherWithDaughters
+ex:FatherWithDaughters rdf:type rdfs:Class ;
+    # FatherWithDaughters is a subclass of:
+    rdfs:subClassOf [
+        # A restriction:
+        rdf:type owl:Restriction ;
+        # on the property hasChild:
+        owl:onProperty ex:hasChild ;
+        # where all values of hasChild are members of the class Woman
+        owl:allValuesFrom ex:Woman
+    ],
+    # and FatherWithDaughters is also a subclass of Man
+    dbpedia:Man .
+
+
 
 
 #𝐶ℎ𝑖𝑙𝑑 ⊑ 𝐻𝑢𝑚𝑎𝑛 ⊓ ∃𝑝𝑎𝑟𝑒𝑛𝑡.(∃ℎ𝑎𝑠𝐶ℎ𝑖𝑙𝑑.𝑆𝑒𝑙𝑓)
+# Define dbpedia:Child as an OWL class
+dbpedia:Child rdf:type rdfs:Class ;
+
+    # Specify that dbpedia:Child is a subclass of ex:Human and has specific restrictions
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;  # This defines a restriction on a property
+        owl:onProperty dbpedia:parent ;  # Restricts the property ex:parent
+
+        # Restriction on ex:parent: There must exist some values that meet additional criteria
+        owl:someValuesFrom [
+            rdf:type owl:Restriction ;  # Further restricts values of a property
+            owl:onProperty ex:hasChild ;  # Restriction applies to ex:hasChild property
+
+            # Restriction on ex:hasChild: Values of this property must belong to the class ex:Child
+            owl:someValuesFrom ex:Child
+        ]
+    ] ,
+
+    # Additionally, specify that dbpedia:Child is a subclass of ex:Human
+    dbpedia:Human .
+
+
+#It means that every individual classified as dbpedia:Child must
+#have a parent-child relationship, with the child itself classified as ex:Child.
