@@ -1,0 +1,28 @@
+# Prefix declarations
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+
+#often used in examples to represent fictitious or demonstrative entities
+@prefix ex: <http://example.org/> .
+
+# often used to describe structured data on the web
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbpedia: <http://dbpedia.org/page/> .
+
+
+
+#𝐻𝑢𝑚𝑎𝑛 ⊑¬𝐴𝑙𝑖𝑒𝑛
+dbpedia:Human rdf:type rdfs:Class .
+dbpedia:𝐴𝑙𝑖𝑒𝑛 rdf:type rdfs:Class .
+dbpedia:Human owl:disjointWith dbpedia:Alien .
+
+
+#𝐹𝑎𝑡ℎ𝑒𝑟𝑊𝑖𝑡ℎ𝐷𝑎𝑢𝑔ℎ𝑡𝑒𝑟𝑠 ⊑ 𝑀𝑎𝑛 ⊓ ∀ℎ𝑎𝑠𝐶ℎ𝑖𝑙𝑑.𝑊𝑜𝑚𝑎𝑛 
+ex:Man rdf:type rdfs:Class .
+ex:Woman rdf:type rdfs:Class .
+ex:FatherWithDaughters rdf:type rdfs:Class .
+
+
+#𝐶ℎ𝑖𝑙𝑑 ⊑ 𝐻𝑢𝑚𝑎𝑛 ⊓ ∃𝑝𝑎𝑟𝑒𝑛𝑡.(∃ℎ𝑎𝑠𝐶ℎ𝑖𝑙𝑑.𝑆𝑒𝑙𝑓)
