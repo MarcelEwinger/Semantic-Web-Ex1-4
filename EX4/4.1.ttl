@@ -15,8 +15,14 @@
 
 #𝐻𝑢𝑚𝑎𝑛 ⊑¬𝐴𝑙𝑖𝑒𝑛
 dbpedia:Human rdf:type rdfs:Class .
-dbpedia:𝐴𝑙𝑖𝑒𝑛 rdf:type rdfs:Class .
-dbpedia:Human owl:disjointWith dbpedia:Alien .
+dbpedia:𝐴𝑙𝑖𝑒𝑛 rdf:type rdfs:Class ;
+     owl:disjointWith dbpedia:Human .
+
+     #or
+ex:Human rdf:subclassOf [
+    owl:complementOf
+    ex:Alien
+]
 
 
 
@@ -46,7 +52,17 @@ ex:FatherWithDaughters rdf:type rdfs:Class ;
     # and FatherWithDaughters is also a subclass of Man
     dbpedia:Man .
 
-
+#or
+ex:FatherWithDaughters a owl:Class;
+    rdfs:subClassOf ex:Man,
+    [
+        a owl:Restriction ;
+        owl:onProperty ex:hasChild ;
+        owl:allValuesFrom ex:Woman
+    ] .
+ex:Man a owl:Class .
+ex:Woamn a owl:Class . 
+ex:hasChild a rdfs:Property . 
 
 
 #𝐶ℎ𝑖𝑙𝑑 ⊑ 𝐻𝑢𝑚𝑎𝑛 ⊓ ∃𝑝𝑎𝑟𝑒𝑛𝑡.(∃ℎ𝑎𝑠𝐶ℎ𝑖𝑙𝑑.𝑆𝑒𝑙𝑓)
@@ -70,6 +86,29 @@ dbpedia:Child rdf:type rdfs:Class ;
 
     # Additionally, specify that dbpedia:Child is a subclass of ex:Human
     dbpedia:Human .
+
+####################################################
+#or
+
+ex:Child a owl:Class ;
+    rdfs:subclassOf ex:Human ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty ex:hasParent ;
+        owl:someValuesFrom [
+            a owl:Restriction ;
+            owl:hasSelf "true"^^sxd:boolean.
+        ] ;
+    ] .
+
+    ex:Human a owl:Class .
+
+#Every human knows himself
+ex:Human rdfs:subClassOf [
+    rdf:type owl:Restriction;
+    owl:onProperty ex:knows;
+    owl:hasSelf "true"^^xsd:boolean.
+]
 
 
 #It means that every individual classified as dbpedia:Child must
