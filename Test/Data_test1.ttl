@@ -35,3 +35,6 @@ _:bnode624461248 a foaf:Person;
 _:bnode757172928 a foaf:Person;
     foaf:homepage <http://www.w3.org/People/Eric/>;
     foaf:name "Eric Gordon Prud'hommeaux".
+
+_:bnode757172929 a foaf:Person;
+foaf:name "John Wick".
