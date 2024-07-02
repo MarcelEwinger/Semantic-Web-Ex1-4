@@ -1,0 +1,51 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix aau: <https://www.aau.at>.
+@prefix foaf: <http://xmln.com/foaf/0.1>.
+@prefix ex: <http://example.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#Peter is a Person
+foaf:Person a rdf:Class .
+
+ex:Peter a foaf:Person .
+
+#Every student is a person
+ex:Student a ex:Person .
+
+#Jonas and Rosemary are children of Peter, who are 3 and 5
+ex:Child a rdf:Class ;
+    a foaf:Person .
+
+ex:childrenOf a rdf:Property ;
+    rdfs:range ex:Child .
+
+ex:Jonas a ex:Child ; 
+    ex:childrenOf ex:Peter ;
+     ex:age "3"^^xsd:nonNegativeInteger . 
+
+
+ex:Rosemary a ex:Child ;
+    ex:childrenOf ex:Peter ;
+    ex:age: "5"^^xsd:nonNegativeInteger .
+
+
+#Mark IV is developed by Canon for professional photographers
+ex:Company a rdf:Class .
+ex:Product a rdf:Class .
+
+ex:isDeveloped a rdf:Property ;
+    rdfs:range ex:Company .
+
+ex:Canon a ex:Company .
+
+ex:Mark_IV a ex:Product ;
+    ex:isDeveloped ex:Canon ;
+    ex:audienceType "professional Photographers" .
+
+#My friend told me that a person who owns a cat is a woman
+ex:Friend ex:says [
+    rdf:subject ex:Woman;
+    rdf:predicate ex:owns;
+    rdf:object ex:Cat
+] .

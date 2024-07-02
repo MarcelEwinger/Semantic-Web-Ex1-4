@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix aau: <https://www.aau.at>.
+@prefix foaf: <http://xmln.com/foaf/0.1>.
+@prefix ex: <http://example.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+#All dogs are animals.
+ex:Animal a rdf:Class .
+
+ex:Dog a ex:Animal .
+
+#Parent is a relationship defined for animals.
+ex:parent a rdf:Property ;
+    rdfs:range ex:Animal .
+
+
+
+#All animals related as parents are also relatives. 
+
+
+
+#Jake states that dogs are carnivores. 
+ex:Jake ex:states [
+    ex:subject ex:Dog;
+    ex:predicate ex:are;
+    ex:object ex:Carnivores 
+] .

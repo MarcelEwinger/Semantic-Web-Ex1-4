@@ -1,0 +1,52 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix aau: <https://www.aau.at>.
+@prefix foaf: <http://xmln.com/foaf/0.1>.
+
+aau:Department a rdf:Class .
+
+aau:memberOf a rdf:Property ;
+    rdfs:range aau:Department .
+
+
+aau:University 
+    a foaf:Organization ;
+        foaf:hompage "https" ;
+        foaf:name "Alpen Adria Universität" .
+
+    
+aau:belongsTo a rdf:Property ;
+    rdfs:range aau:University .
+
+aau:InfoManagement 
+    a aau:Department ;
+    a aau:StudyDirection ;
+    a aau:belongsTo ;
+    foaf:name "Information Management" .
+
+aau:Konstantin
+    a foaf:Person ;
+    foaf:name "Bla Bla" ;
+    aau:memberOf aau:InfoManagement .
+
+
+#Tim knows someone who studies at AAU
+@prefix ex: <http://example.org/>.
+
+ex:Tim ex:knows [
+    a foaf:Person ;
+    ex:studies ex:AAU
+] .
+
+#########################################
+ex:roland ex:states ex:petersRelation . 
+		
+ex:petersRelation a rdf:Statement ; 
+	rdf:subject ex:peter ; 
+	rdf:predicate ex:mariedTo ; 
+    rdf:object ex:maria . 
+
+#####################################
+
+
+
