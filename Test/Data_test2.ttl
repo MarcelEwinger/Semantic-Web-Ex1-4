@@ -12,18 +12,17 @@ foaf:homepage <http://www.aidanhogan.com/>;
 foaf:name "Aidan Hogan".
 
 <http://www.polleres.net/foaf.rdf#me> a foaf:Person;
-rdfs:seeAlso <http://www.google.com/profiles/droxel>;
-foaf:depiction <http://www.polleres.net/images/axel.jpg>;
-foaf:family_name "Polleres";
-foaf:familyName "Polleres";
-foaf:firstName "Axel";
-foaf:givenname "Axel";
-foaf:lastName "Polleres".
+  rdfs:seeAlso <http://www.google.com/profiles/droxel>;
+  foaf:depiction <http://www.polleres.net/images/axel.jpg>;
+  foaf:family_name "Polleres";
+  foaf:familyName "Polleres";
+  foaf:firstName "Axel";
+  foaf:givenname "Axel";
+  foaf:lastName "Polleres".
 
-foaf:knows <http://glo.net#me> ;
-  _:bnode757172928 ;
-  http://sw.deri.org/~aidanh/foaf/foaf.rdf#Aidan_Hogan ;
-  _:bnode624461248
+  foaf:knows <http://glo.net#me>
+  _:bnode757172928,
+  _:bnode624461248 .
 
 _:bnode624461248 a foaf:Person ;
 foaf:homepage <http://apassant.net/>;
